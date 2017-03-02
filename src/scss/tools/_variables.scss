@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+
+/*
+ * Fonts
+ */
+
+$main-font: 'Fira Sans', Arial, sans-serif;
+
+
+/*
+ * Colors
+ */
+$white: #ffffff;
+
+$light-grey: #f5f6f7;
+$mid-grey: #d8e0e6;
+$grey: #829cb3;
+
+
+$black: #404852;
+
+$green: #11d26d;
+$green-hover: #26db00;
+
+$red: #f65656;
+
+
+/*
+ * Transitions
+ */
+$shadow-1:0 0 30px 0 rgba(0,0,0,0.05);
+$shadow-green:0 0 30px 0 rgba(17, 210, 109, 0.5);
+
+
+/*
+ * Transitions
+ */
+
+
+/*
+ * Z-index
+ */
+$zindex: 1;
+$zindex-2: 5;
+$zindex-3: 10;
+$zindex-4: 15;
+$zindex-5: 20;
+
+
+/*
+ * Breakpoints
+ */
+$phone: 544px;
+$tablet: 768px;
+$desktop: 992px;
+$wide-desktop: 1200px;
