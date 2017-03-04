@@ -1,40 +1,41 @@
 <?php
     // page variable
-    $title = 'Inventory - Products';
+    $title_page = 'Inventory - Products';
     $page  = 'index';
 
     // includes
     include 'includes/config.php';
 
     // database query
-    $items = $db->query('SELECT * FROM items')->fetchAll();
+    // $items = $db->query('SELECT * FROM items')->fetchAll();
+    $items = $db->query('SELECT items.id, items.title, items.description, items.price, items.quantity, categories.title AS category
+                         FROM items
+                         LEFT JOIN categories
+                         ON items.category = categories.id')->fetchAll();
 
-    include 'includes/header.php';
+    include 'partials/header.php';
 
-    // echo '<pre>';
-    // print_r($items);
-    // echo '</pre>';
 ?>
+
 
     <!-- $products control -->
     <section class="products-controls"></section>
-
 
     <!-- $grid items -->
     <section class="grid list">
 
         <!-- $item -->
         <?php foreach ($items as $item): ?>
-
         <article class="item">
             <span class="item-id"> <?= $item->id ?> </span>
             <div class="item-shot">
                 <div class="item-shot-container"></div>
             </div>
             <h2 class="item-title"> <?= $item->title ?> </h2>
+
             <p class="item-category">
                 <span class="text">Category</span>
-                <span class="data">soon</span>
+                <span class="data"> <?= $item->category ?> </span>
             </p>
             <p class="item-price">
                 <span class="text">Price</span>
@@ -45,7 +46,7 @@
                 <span class="data"> <?= $item->quantity ?> </span>
             </p>
             <div class="item-btn">
-                <a href="product.php?id=<?= $item->id ?>" class="item-edit">
+                <a href="product_edit.php?id=<?= $item->id ?>" class="item-edit">
                     <svg class="item-btn-icon" viewBox="0 0 459 459">
                         <path d="M0 362.1V459h96.9l280.5-283.05 -96.9-96.9L0 362.1zM451.35 102c10.2-10.2 10.2-25.5 0-35.7L392.7 7.649c-10.2-10.2-25.5-10.2-35.7 0l-45.9 45.9 96.9 96.9L451.35 102z"/>
                     </svg>
@@ -58,12 +59,16 @@
                 </a>
             </div>
         </article>
-
         <?php endforeach; ?>
 
     </section>
+
+    <div class="submit">
+        <a href="product_add.php"></a>
+    </div>
+
 </div>
 
 <?php
-    include 'includes/footer.php';
+    include 'partials/footer.php';
 ?>

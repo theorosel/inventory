@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <title> <?= $title ?> </title>
+        <title> <?= $title_page ?> </title>
         <meta name="description" content="A simple starter template for front-end projects." />
 
         <!-- $css import -->
