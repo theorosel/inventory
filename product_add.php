@@ -27,7 +27,14 @@
                 <label for="description">Description :</label>
                 <textarea name="description"><?= $description ?></textarea>
             </div>
+
+            <div class="form-control <?= array_key_exists('image', $error_messages) ? 'error' : '' ?>">
+                <label for="image">Image :</label>
+                <input type="file" name="image">
+            </div>
         </div>
+
+
 
         <!-- $right form -->
         <div class="form-right">

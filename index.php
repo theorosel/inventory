@@ -8,7 +8,7 @@
 
     // database query
     // $items = $db->query('SELECT * FROM items')->fetchAll();
-    $items = $db->query('SELECT items.id, items.title, items.description, items.price, items.quantity, categories.title AS category
+    $items = $db->query('SELECT items.id, items.title, items.description, items.price, items.quantity, items.image, categories.title AS category
                          FROM items
                          LEFT JOIN categories
                          ON items.category = categories.id')->fetchAll();
@@ -29,7 +29,9 @@
         <article class="item">
             <span class="item-id"> <?= $item->id ?> </span>
             <div class="item-shot">
-                <div class="item-shot-container"></div>
+                <div class="item-shot-container">
+                    <img src="http://localhost:8888/uploads/<?= $item->image ?>" alt="<?= $item->title ?>">
+                </div>
             </div>
             <h2 class="item-title"> <?= $item->title ?> </h2>
 

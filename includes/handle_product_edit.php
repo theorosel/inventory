@@ -56,6 +56,9 @@
 
             // success message
             $success_messages[] = 'Your product is update';
+
+            header('location: index.php');
+            exit;
         }
     }
 
