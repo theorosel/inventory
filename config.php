@@ -1,12 +1,12 @@
 <?php
 
-// connexion variables
+    // Connexion variables
     define('DB_HOST', 'localhost');
     define('DB_NAME', 'db_inventory');
     define('DB_USER', 'root');
     define('DB_PASS', 'root');
 
-
+    // Database connexion
     try {
     $driver = "mysql:dbname=". DB_NAME .";host=". DB_HOST;
     $db = new PDO($driver, DB_USER, DB_PASS);
@@ -19,3 +19,5 @@
     print_r($e);
     echo '</pre>';
     }
+
+    define('URL', 'http://localhost:8888/');

@@ -1,19 +1,7 @@
-<?php
-    // page variable
-    $title_page = 'Inventory - Product';
-    $page  = 'index';
-
-    // includes
-    include 'includes/config.php';
-    include 'includes/handle_product_edit.php';
-    include 'partials/header.php';
-
-?>
-
 <!-- $product -->
-<section class="product">
+<section class="grid">
     <div class="error-box"></div>
-    <form class="product-form" action="#" method="post" enctype="multipart/form-data">
+    <form class="form" action="#" method="post" enctype="multipart/form-data">
 
         <!-- $left form -->
         <div class="form-left">
@@ -64,8 +52,3 @@
         </div>
     </form>
 </section>
-
-
-<?php
-    include 'partials/footer.php';
-?>

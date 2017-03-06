@@ -1,19 +1,18 @@
 <?php
 
-    // product query with id param
-    $id = $_GET['id'];
-    $prepare = $db->prepare('SELECT * FROM items WHERE id = ?');
-    $prepare->execute(array($id));
-    $item = $prepare->fetch();
-
-    // categories query
+    // Categories query
     $categories = $db->query('SELECT * FROM categories')->fetchAll();
-
 
     $error_messages   = array();
     $success_messages = array();
 
-    // data sent
+    // Variables declaration
+    $title         ='';
+    $description   ='';
+    $price         ='';
+    $quantity      ='';
+
+
     if (!empty($_POST)) {
 
         $title              = trim($_POST['title']);
@@ -21,8 +20,9 @@
         $category           = (int)$_POST['category'];
         $price              = (int)$_POST['price'];
         $quantity           = (int)$_POST['quantity'];
+        $image              = $_FILES['image'];
 
-        // errors
+
         if (empty($title)) {
             $error_messages['title'] = 'Missing value';
         }
@@ -40,38 +40,44 @@
             }
         }
 
-        // no error
+        if (empty($quantity)) {
+            $error_messages['quantity'] = 'Please enter a quantity';
+
+            if (!is_numeric($quantity)) {
+                $error_messages['quantity'] = 'quantity must be a number';
+            }
+        }
+
+        $image_check = image_check($image);
+
+        if (is_string($image_check)) {
+            $error_messages['image'] = $image_check;
+        }
+
+
+        // No error
         if (empty($error_messages)) {
 
-            $prepare = $db->prepare("UPDATE items SET title=:title, description=:description, category=:category, price=:price, quantity=:quantity WHERE id=:id");
+            $file_name = image_upload($image);
 
-            $prepare->bindParam('id', $id);
+            $prepare = $db->prepare("INSERT INTO items (title, description, category, price, quantity, image) VALUES (:title, :description, :category, :price, :quantity, :image)");
+
             $prepare->bindParam('title', $title);
             $prepare->bindParam('description', $description);
-            $prepare->bindValue('category', $category);
+            $prepare->bindParam('category', $category);
             $prepare->bindParam('price', $price);
             $prepare->bindParam('quantity', $quantity);
+            $prepare->bindParam('image', $file_name);
 
             $prepare->execute();
 
             // success message
             $success_messages[] = 'Your product is update';
 
-            header('location: index.php');
+            $redirection = URL;
+            header("location: $redirection");
             exit;
         }
-    }
-
-    // no data sent
-    else {
-
-        $title              = $item->title;
-        $description        = $item->description;
-        $category           = $item->category;
-        $date               = $item->date;
-        $price              = $item->price;
-        $quantity           = $item->quantity;
-
     }
 
 ?>

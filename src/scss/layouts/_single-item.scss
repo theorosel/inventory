@@ -1,12 +1,5 @@
-.product {
-    position: absolute;
+.form {
     width: 100%;
-    padding-left: 60px;
-    padding-right: 60px;
-    margin-top: 140px;
-}
-
-.product-form {
     display: flex;
     flex-direction: column nowrap;
     justify-content: space-between;
@@ -99,7 +92,7 @@
  */
 .submit {
     position: fixed;
-    bottom: 40px;
+    bottom: 60px;
     right: 60px;
     width: 60px;
     height: 60px;
