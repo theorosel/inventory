@@ -1,4 +1,4 @@
     <!-- $js import -->
-    <script src="<?= URL ?>assets/js/app.js"></script>
+    <script src="<?= URL ?>assets/js/products.js"></script>
     </body>
 </html>

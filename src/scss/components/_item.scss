@@ -7,10 +7,6 @@
         position: relative;
     }
 
-    .item-title {
-        font-size: 3em;
-        $color: $black;
-    }
 
     .item-description {
         font-size: 1em;
@@ -52,7 +48,7 @@
 
 
 /*
- * $card mode
+ * $list mode
  */
 .grid.list {
 
@@ -72,6 +68,23 @@
         padding-right: 30px;
     }
 
+    .item-shot,
+    .item-title,
+    .item-category,
+    .item-price,
+    .item-quantity,
+    .item-btn
+    {
+        width: calc((100% - 40px) / 6);
+        text-align: center;
+    }
+
+    .item-title {
+        font-size: 1.125em;
+        font-weight: 600;
+        text-align: left;
+    }
+
     .item-id {
         text-align: center;
         width: 20px;
@@ -89,23 +102,6 @@
             max-height: 100%;
             width: auto;
         }
-    }
-
-    .item-shot,
-    .item-title,
-    .item-category,
-    .item-price,
-    .item-quantity,
-    .item-btn
-    {
-        width: calc((100% - 40px) / 6);
-        text-align: center;
-    }
-
-    .item-id,
-    .item-title {
-        text-align: left;
-        font-weight: 600;
     }
 
     .item-category,

@@ -1,5 +1,21 @@
 <!-- $products control -->
-<section class="products-controls"></section>
+<section class="products-controls">
+    <div class="products-controls-container">
+        <div class="products-controls-left">
+            <p class="item-number">123 items</p>
+            <input type="search" id="search" name="search" placeholder="Search any product">
+        </div>
+
+        <div class="products-controls-right">
+            <a href="#" class="products-controls-list">
+                <svg  class="products-controls-icon" viewBox="0 0 16 13"><path d="M0 0h3v3H0V0zm0 5h3v3H0V5zm0 5h3v3H0v-3zM5 0h11v3H5V0zm0 5h11v3H5V5zm0 5h11v3H5v-3z"/></svg>
+            </a>
+            <a href="#" class="products-controls-card">
+                <svg class="products-controls-icon" viewBox="0 0 26.995 26.995"><path d="M0 11.808h11.81V0H0V11.81zM15.184 0V11.81h11.81V0h-11.81zm0 26.993h11.81V15.185h-11.81v11.808zM0 26.993h11.81V15.185H0v11.808z"/></svg>
+            </a>
+        </div>
+    </div>
+</section>
 
 <!-- $grid items -->
 <section class="grid card">
