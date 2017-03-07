@@ -1,4 +1,7 @@
 <?php
 
-    echo "handle_categories_list";
+    /*
+     * $database query
+     */
+    $categories = $db->query('SELECT * FROM categories')->fetchAll();
 ?>

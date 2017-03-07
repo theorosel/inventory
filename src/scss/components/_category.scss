@@ -1,0 +1,50 @@
+.grid.card {
+
+    .category {
+        position: relative;
+        width: calc(33.33% - 30px);
+        margin-bottom: 20px;
+        background-color: $white;
+        box-shadow: $shadow-1;
+        background-color: $white;
+        margin-right: 30px;
+        padding: 40px;
+    }
+
+    .category-title {
+        color: $black;
+        font-size: 1.5em;
+        font-weight: 600;
+        margin-bottom: 25px;
+    }
+
+    .category-description {
+        color: $mid-black;
+        font-size: 1em;
+        font-weight: 400;
+        line-height: 1.6em;
+        margin-bottom: 15px;
+    }
+
+    .category-btn {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+
+        svg {
+            width: 18px;
+            fill: $mid-grey;
+        }
+    }
+
+    .item-edit,
+    .item-delete {
+        cursor: pointer;
+
+        &:hover {
+            svg {
+                fill: $grey;
+            }
+        }
+    }
+}
