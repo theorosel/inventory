@@ -4,22 +4,22 @@
     switch ($url[1]) {
 
         case '':
-            $page = 'list';
+            $page_action = 'list';
             $title_page = 'Categories - list';
             break;
 
         case 'list':
-            $page = 'list';
+            $page_action = 'list';
             $title_page = 'Categories - list';
             break;
 
         case 'add':
-            $page = 'add';
+            $page_action = 'add';
             $title_page = 'Categories - Add';
             break;
 
         case 'edit':
-            $page = 'edit';
+            $page_action = 'edit';
             $id   = $url[2];
             $title_page = 'Categories - Edit';
             break;
@@ -28,5 +28,7 @@
             break;
     }
 
-    include("includes/handle_categories_$page.php");
-    include("views/pages/categories_$page.php");
+    include("includes/handle_categories_$page_action.php");
+    include('views/partials/header.php');
+    include("views/pages/categories_$page_action.php");
+    include('views/partials/footer.php');

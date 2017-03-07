@@ -20,6 +20,7 @@
         <header class="header">
             <nav>
                 <ul class="primary-nav">
+                    
                     <?php if ($page == 'products'): ?>
                         <li class="links active"><a href="<?= URL ?>" class="link">Products</a></li>
                         <li class="links"><a href="<?= URL ?>categories" class="link">Categories</a></li>

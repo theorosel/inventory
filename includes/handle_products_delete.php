@@ -1,15 +1,19 @@
 <?php
 
     //Product query with id param
-    $prepare = $db->prepare('SELECT * FROM items WHERE id = ?');
-    $prepare->execute(array($id));
-    $item = $prepare->fetch();
+    $items = $db->prepare('SELECT items.id, items.title, items.description, items.price, items.quantity, items.image, categories.title AS category
+                           FROM items
+                           LEFT JOIN categories
+                           ON items.category = categories.id
+                           WHERE items.id = ?');
+
+    $items->execute(array($id));
+    $item = $items->fetch();
 
 
     // Variables declaration
     $delete = $_POST['delete'];
     $image = $item->image;
-
 
 
     if (!empty($delete)) {
