@@ -24,6 +24,12 @@
             $title_page = 'Categories - Edit';
             break;
 
+        case 'delete':
+            $page_action = 'delete';
+            $id   = $url[2];
+            $title_page = 'Categories - Delete';
+            break;
+
         default:
             break;
     }

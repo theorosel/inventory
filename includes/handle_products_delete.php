@@ -24,6 +24,7 @@
         $prepare->execute(array($id));
 
         $redirection = URL;
-        header("location: $redirection");
+        
+        header("location: $redirection/products");
         exit;
     }

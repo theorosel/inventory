@@ -5,7 +5,7 @@
     $prepare->execute(array($id));
     $item = $prepare->fetch();
 
-    // categories query
+    // Categories query
     $categories = $db->query('SELECT * FROM categories')->fetchAll();
 
 
@@ -16,21 +16,20 @@
     // data sent
     if (!empty($_POST)) {
 
-        $title              = trim($_POST['title']);
-        $description        = trim($_POST['description']);
-        $category           = (int)$_POST['category'];
-        $price              = (int)$_POST['price'];
-        $quantity           = (int)$_POST['quantity'];
+        $title              = isset($_POST['title']) ? trim($_POST['title']) : '';
+        $description        = isset($_POST['description']) ? trim($_POST['description']) : '';
+        $category           = isset($_POST['category']) ? (int)$_POST['category'] : '';
+        $price              = isset($_POST['price']) ? (int)$_POST['price'] : '';
+        $quantity           = isset($_POST['quantity']) ? (int)$_POST['quantity'] : '';
 
         // errors
         if (empty($title)) {
             $error_messages['title'] = 'Missing value';
         }
 
-        if (empty($title)) {
+        if (empty($description)) {
             $error_messages['description'] = 'Missing value';
         }
-
 
         if (empty($price)) {
             $error_messages['price'] = 'Please enter a price';
@@ -58,7 +57,8 @@
             $success_messages[] = 'Your product is update';
 
             $redirection = URL;
-            header("location: $redirection");
+
+            header("location: $redirection/products");
             exit;
         }
     }
@@ -72,7 +72,6 @@
         $date               = $item->date;
         $price              = $item->price;
         $quantity           = $item->quantity;
-
     }
 
 ?>

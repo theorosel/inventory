@@ -12,8 +12,8 @@
     // data sent
     if (!empty($_POST)) {
 
-        $title              = trim($_POST['title']);
-        $description        = trim($_POST['description']);
+        $title              = isset($_POST['title']) ? trim($_POST['title']) : '';
+        $description        = isset($_POST['description']) ? trim($_POST['description']) : '';
 
         // errors
         if (empty($title)) {
@@ -40,6 +40,7 @@
             $success_messages[] = 'Your product is update';
 
             $redirection = URL;
+            
             header("location: $redirection/categories");
             exit;
         }

@@ -15,11 +15,11 @@
 
     if (!empty($_POST)) {
 
-        $title              = trim($_POST['title']);
-        $description        = trim($_POST['description']);
-        $category           = (int)$_POST['category'];
-        $price              = (int)$_POST['price'];
-        $quantity           = (int)$_POST['quantity'];
+        $title              = isset($_POST['title']) ? trim($_POST['title']) : '';
+        $description        = isset($_POST['description']) ? trim($_POST['description']) : '';
+        $category           = isset($_POST['category']) ? (int)$_POST['category'] : '';
+        $price              = isset($_POST['price']) ? (int)$_POST['price'] : '';
+        $quantity           = isset($_POST['quantity']) ? (int)$_POST['quantity'] : '';
         $image              = $_FILES['image'];
 
 
@@ -75,7 +75,8 @@
             $success_messages[] = 'Your product is update';
 
             $redirection = URL;
-            header("location: $redirection");
+
+            header("location: $redirection/products");
             exit;
         }
     }
