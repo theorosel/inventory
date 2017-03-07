@@ -98,10 +98,10 @@
     height: 60px;
     font-size: 0;
     border-radius: 50px;
-    background-color: $green;
     box-shadow: $shadow-1;
     cursor: pointer;
 }
+
 
 .submit input {
     position: absolute;
@@ -124,6 +124,41 @@
     bottom: 0;
 }
 
+.submit-icon {
+    width: 18px;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-9px, -9px);
+    fill: $white;
+}
+
+
+
+.submit.add,
+.submit.validate {
+    background-color: $green;
+
+    &:hover {
+        background-color: $green-hover;
+    }
+}
+
+.submit.delete {
+
+    bottom: 60px;
+    right: 140px;
+    width: 60px;
+    height: 60px;
+    background-color: $red;
+    box-shadow: $shadow-1;
+
+    &:hover {
+        background-color: $red-hover;
+    }
+}
+
 
 
 
@@ -138,4 +173,8 @@
 
 .error-box.active {
     display: block;
+}
+
+.error-message {
+    margin-bottom: 8px;
 }

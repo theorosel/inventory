@@ -21,7 +21,7 @@
         </p>
         <p class="item-price">
             <span class="text">Price</span>
-            <span class="data"> <?= $item->price ?> </span>
+            <span class="data"> $ <?= $item->price ?> </span>
         </p>
         <p class="item-quantity">
             <span class="text">Quantity</span>
@@ -44,7 +44,9 @@
     <?php endforeach; ?>
 
 </section>
-<div class="submit">
-    <a href="<?= URL ?>products/add"></a>
+<div class="submit add">
+    <a href="<?= URL ?>products/add">
+        <svg class="submit-icon"viewBox="0 0 12.5 12.5"><path d="M11.8,4.7h-4V.7A.68.68,0,0,0,7.1,0H5.4a.68.68,0,0,0-.7.7v4H.7a.68.68,0,0,0-.7.7V7.1a.68.68,0,0,0,.7.7h4v4a.68.68,0,0,0,.7.7H7.1a.68.68,0,0,0,.7-.7v-4h4a.68.68,0,0,0,.7-.7V5.4A.75.75,0,0,0,11.8,4.7Z"/></svg>
+    </a>
 </div>
 </div>
