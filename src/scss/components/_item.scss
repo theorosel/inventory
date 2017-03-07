@@ -8,7 +8,13 @@
     }
 
     .item-title {
-        font-size: 1.2em;
+        font-size: 3em;
+        $color: $black;
+    }
+
+    .item-description {
+        font-size: 1em;
+        line-height: 1.5em;
         $color: $black;
     }
 
@@ -181,7 +187,7 @@
     .item-title {
         position: relative;
         display: block;
-        font-size: 1.125em;
+        font-size: 1.4em;
         font-weight: 600;
         margin-top: 20px;
 
@@ -194,6 +200,15 @@
             height: 1px;
             background-color: $mid-grey;
         }
+    }
+
+    .item-description {
+        position: relative;
+        display: block;
+        font-size: 1em;
+        line-height: 1.5em;
+        font-weight: 400;
+        margin-top: 25px;
     }
 
     .item-category,

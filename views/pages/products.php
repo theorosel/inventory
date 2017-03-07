@@ -24,6 +24,12 @@
             $title_page = 'Products - Edit';
             break;
 
+        case 'delete':
+            $page = 'delete';
+            $id   = $url[2];
+            $title_page = 'Products - Delete';
+            break;
+
         default:
             break;
     }

@@ -1,5 +1,10 @@
 <?php
 
+    /*
+     * image_check($image : object)
+     * Called in handle_product_add.php
+     * Check if the image respect some parameters before upload
+     */
     function image_check($image) {
 
         if (empty($image['type'])) {
@@ -23,6 +28,11 @@
     }
 
 
+    /*
+     * image_upload($image : object)
+     * Called in handle_product_add.php
+     * Upload image in URL/uploads
+     */
     function image_upload($image) {
 
         $directory  = __DIR__ . '/../uploads/';
@@ -36,6 +46,28 @@
         }
         else {
             echo "Error : Couldn't upload the image";
+            die;
+        }
+    }
+
+
+    /*
+     * image_delete($image : string)
+     * Called in handle_product_delete.php
+     * Remove image in uploads folder according to the path
+     */
+    function image_delete($image) {
+
+        $directory      = __DIR__ . '/../uploads/';
+        $filename       = $image;
+        $file           = $directory . $filename;
+
+        if ($file = unlink($file)) {
+            return $file;
+        }
+
+        else {
+            echo "Error : Couldn't delete the image";
             die;
         }
     }
