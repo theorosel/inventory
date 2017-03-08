@@ -2,11 +2,16 @@
 <section class="products-controls">
     <div class="products-controls-container">
         <div class="products-controls-left">
-            <p class="item-number">123 items</p>
+            <p class="items-number"> <?= count($items) ?> items</p>
             <input type="search" id="search" name="search" placeholder="Search any product">
         </div>
 
         <div class="products-controls-right">
+            <select class="order" name="order">
+                <option value="id">ID</option>
+                <option value="price">price</option>
+                <option value="quantity">quantity</option>
+            </select>
             <a href="#" class="products-controls-list">
                 <svg  class="products-controls-icon" viewBox="0 0 16 13"><path d="M0 0h3v3H0V0zm0 5h3v3H0V5zm0 5h3v3H0v-3zM5 0h11v3H5V0zm0 5h11v3H5V5zm0 5h11v3H5v-3z"/></svg>
             </a>
@@ -22,15 +27,15 @@
 
     <!-- $item -->
     <?php foreach ($items as $item): ?>
+
     <article class="item">
-        <span class="item-id"> <?= $item->id ?> </span>
+        <span class="item-id"> #000<?= $item->id ?> </span>
         <div class="item-shot">
             <div class="item-shot-container">
                 <img src="<?= URL ?>uploads/<?= $item->image ?>" alt="<?= $item->title ?>">
             </div>
         </div>
         <h2 class="item-title"> <?= $item->title ?> </h2>
-
         <p class="item-category">
             <span class="text">Category</span>
             <span class="data"> <?= $item->category ?> </span>
@@ -57,9 +62,11 @@
             </a>
         </div>
     </article>
-    <?php endforeach; ?>
 
+    <?php endforeach; ?>
 </section>
+
+<!-- $submit ui component -->
 <div class="submit add">
     <a href="<?= URL ?>products/add">
         <svg class="submit-icon"viewBox="0 0 12.5 12.5"><path d="M11.8,4.7h-4V.7A.68.68,0,0,0,7.1,0H5.4a.68.68,0,0,0-.7.7v4H.7a.68.68,0,0,0-.7.7V7.1a.68.68,0,0,0,.7.7h4v4a.68.68,0,0,0,.7.7H7.1a.68.68,0,0,0,.7-.7v-4h4a.68.68,0,0,0,.7-.7V5.4A.75.75,0,0,0,11.8,4.7Z"/></svg>
