@@ -7,6 +7,7 @@
         </div>
 
         <div class="products-controls-right">
+            <p class="order-label">Order by</p>
             <select class="order" name="order">
                 <option value="id">ID</option>
                 <option value="price">price</option>

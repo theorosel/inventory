@@ -53,10 +53,14 @@ function Controls (element) {
     this.toggle_list = function() {
 
         if (this.$el.grid.classList.contains('card')) {
+            this.$el.toggle_card.classList.remove('active');
+            this.$el.toggle_list.classList.add('active');
+
             this.$el.grid.classList.remove('card');
             this.$el.grid.classList.add('list');
         }
         else {
+            this.$el.toggle_list.classList.remove('active');
             return false;
         }
     }
@@ -69,10 +73,14 @@ function Controls (element) {
     this.toggle_card = function() {
 
         if (this.$el.grid.classList.contains('list')) {
+            this.$el.toggle_list.classList.remove('active');
+            this.$el.toggle_card.classList.add('active');
+
             this.$el.grid.classList.remove('list');
             this.$el.grid.classList.add('card');
         }
         else {
+            this.$el.toggle_card.classList.remove('active');
             return false;
         }
     }
