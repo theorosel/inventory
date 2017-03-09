@@ -1,13 +1,51 @@
+/*
+ * $grid basic style
+ */
 .grid {
     width: 100%;
     padding-left: 60px;
     padding-right: 60px;
-    margin-top: 60px;
+    margin-top: 30px;
 }
 
+/*
+ * $card mode
+ */
 .grid.card {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-start;
+}
+
+/*
+ * $single item mode
+ */
+.grid-single.card {
+    padding-left: 60px;
+    padding-right: 60px;
+    margin-top: 110px;
+}
+
+
+/*
+ * $category card mode
+ */
+.grid-category.card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding-left: 60px;
+    padding-right: 60px;
+    margin-top: 110px;
+}
+
+/*
+ * $single category mode
+ */
+.grid-category-single.card {
+    padding-left: 60px;
+    padding-right: 60px;
+    margin-top: 110px;
 }

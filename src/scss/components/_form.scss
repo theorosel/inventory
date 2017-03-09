@@ -1,9 +1,18 @@
+.form-container {
+    width: 100%;
+    margin-top: 110px;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+
 .form {
     width: 100%;
     display: flex;
     flex-direction: column nowrap;
     justify-content: space-between;
     color: $black;
+
 }
 
 
@@ -76,7 +85,7 @@
 .form-control input:focus,
 .form-control select:focus,
 .form-control textarea:focus {
-    border-color: $grey;
+    border-color: $green;
 }
 
 .form-control.error input,
@@ -92,7 +101,7 @@
  */
 .submit {
     position: fixed;
-    bottom: 60px;
+    bottom: 40px;
     right: 60px;
     width: 60px;
     height: 60px;
@@ -147,7 +156,7 @@
 
 .submit.delete {
 
-    bottom: 60px;
+    bottom: 40px;
     right: 140px;
     width: 60px;
     height: 60px;

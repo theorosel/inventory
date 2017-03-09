@@ -1,6 +1,8 @@
 <!-- $grid -->
-<section class="grid card">
+<section class="grid-single card">
+    <h1> <?= $title_page ?> </h1>
 
+    <!-- $item -->
     <article class="item">
         <span class="item-id"> <?= $item->id ?> </span>
         <div class="item-shot">

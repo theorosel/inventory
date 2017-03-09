@@ -1,5 +1,5 @@
 <!-- $grid -->
-<section class="grid card">
+<section class="grid-category card">
 
     <!-- $item -->
     <?php foreach ($categories as $category): ?>

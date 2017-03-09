@@ -1,5 +1,6 @@
 <!-- $grid -->
-<section class="grid">
+<div class="form-container">
+    <h1> <?= $title_page ?> </h1>
     <div class="error-box <?= !empty($error_messages) ? 'active' : '' ?>">
         <?php foreach ($error_messages as $error_message): ?>
             <p class="error-message"> <?= $error_message ?></p>
@@ -35,4 +36,4 @@
         </div>
 
     </form>
-</section>
+</div>

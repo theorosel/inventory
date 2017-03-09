@@ -119,13 +119,14 @@ function Controls (element) {
             // construct template
             this.$el.grid.innerHTML +=
                 '<article class="item">' +
-                    '<span class="item-id">' + item[i].id + '</span>' +
+                    '<span class="item-id">#000' + item[i].id + '</span>' +
                     '<div class="item-shot">' +
                         '<div class="item-shot-container">' +
                             '<img src="'+ url + 'uploads/' + item[i].image +'" alt="' + item[i].title + '">' +
                         '</div>' +
                     '</div>' +
                     '<h2 class="item-title">' + item[i].title + '</h2>' +
+                    '<p class="item-description">' + item[i].description + '</p>' +
 
                     '<p class="item-category">' +
                         '<span class="text">Category</span>' +

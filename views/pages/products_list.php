@@ -12,7 +12,7 @@
                 <option value="price">price</option>
                 <option value="quantity">quantity</option>
             </select>
-            <a href="#" class="products-controls-list">
+            <a href="#" class="products-controls-list active">
                 <svg  class="products-controls-icon" viewBox="0 0 16 13"><path d="M0 0h3v3H0V0zm0 5h3v3H0V5zm0 5h3v3H0v-3zM5 0h11v3H5V0zm0 5h11v3H5V5zm0 5h11v3H5v-3z"/></svg>
             </a>
             <a href="#" class="products-controls-card">
@@ -23,7 +23,7 @@
 </section>
 
 <!-- $grid items -->
-<section class="grid card">
+<section class="grid list">
 
     <!-- $item -->
     <?php foreach ($items as $item): ?>
@@ -36,6 +36,7 @@
             </div>
         </div>
         <h2 class="item-title"> <?= $item->title ?> </h2>
+        <p class="item-description"><?= $item->description ?></p>
         <p class="item-category">
             <span class="text">Category</span>
             <span class="data"> <?= $item->category ?> </span>

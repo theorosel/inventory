@@ -1,5 +1,8 @@
 <!-- $grid -->
-<section class="grid card">
+<section class="grid-category-single card">
+    <h1> <?= $title_page ?> </h1>
+
+    <!-- $item -->
     <article class="category">
         <h2 class="category-title"> <?= $category->title ?> </h2>
         <p class="category-description"> <?= $category->description ?> </p>
