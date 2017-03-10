@@ -37,7 +37,7 @@
             </div>
         </div>
         <h2 class="item-title"> <?= $item->title ?> </h2>
-        <p class="item-description"><?= $item->description ?></p>
+        <p class="item-description"><?= excerpt($item->description) ?></p>
         <p class="item-category">
             <span class="text">Category</span>
             <span class="data"> <?= $item->category ?> </span>

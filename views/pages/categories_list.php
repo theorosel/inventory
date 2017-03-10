@@ -5,7 +5,7 @@
     <?php foreach ($categories as $category): ?>
     <article class="category">
         <h2 class="category-title"> <?= $category->title ?> </h2>
-        <p class="category-description"> <?= $category->description ?> </p>
+        <p class="category-description"> <?= excerpt($category->description) ?> </p>
         <div class="category-btn">
             <a href="<?= URL ?>categories/edit/<?= $category->id ?>" class="item-edit">
                 <svg class="item-btn-icon" viewBox="0 0 459 459">

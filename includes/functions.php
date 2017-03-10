@@ -40,7 +40,7 @@
 
         if ($text_length >= 110) {
 
-            $text = substr($text, 0, 110) . '...';
+            $text = substr($text, 0, 110) . ' ...';
 
             return $text;
         }
