@@ -1,5 +1,10 @@
 <?php
 
+
+    function is_logged() {
+        return isset($_SESSION['user']);
+    }
+
     /*
      * image_check($image : object)
      * Called in handle_product_add.php

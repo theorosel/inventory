@@ -21,3 +21,4 @@
     }
 
     define('URL', 'http://localhost:8888/');
+    define('SALT', 'c85mnQBbL2Rc');
