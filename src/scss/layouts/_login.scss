@@ -1,0 +1,100 @@
+.form-login {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $light-grey;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content:flex-start;
+}
+
+
+.form-login-container {
+    width: 380px;
+    margin: auto;
+    background-color: $white;
+    border-radius: 3px;
+    box-shadow: $shadow-1;
+    padding: 40px;
+    color: $black;
+}
+
+
+.form-control-login {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding-top: 18px;
+    padding-bottom: 18px;
+
+    input[type=submit] {
+        height: 100%;
+        width: 100%;
+        border: none;
+        padding-left: 0px;
+        color: $white;
+        font-size: 1.125em;
+        font-weight: 600;
+        background-color: $green;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $green-hover;
+        }
+    }
+}
+
+
+.form-login-error p {
+    font-size: 0.9em;
+    font-weight: 600;
+    color: $red;
+}
+
+
+.form-control-login label{
+    display: block;
+    margin-bottom: 15px;
+}
+
+
+.form-control-login input{
+    display: block;
+    width: 100%;
+    height: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 15px;
+    border: 1px solid $mid-grey;
+    border-radius: 4px;
+
+    &:focus {
+        border-color: $green;
+    }
+
+}
+
+
+.form-control-login.error input{
+    border-color: $red;
+}
+
+
+.login-submit {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: $green;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: $white;
+    font-size: 1.125em;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+}
