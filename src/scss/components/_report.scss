@@ -1,0 +1,55 @@
+.grid-report.list {
+
+    .report {
+        width: 100%;
+        height: 80px;
+        margin-bottom: 20px;
+        background-color: $white;
+        box-shadow: $shadow-1;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        background-color: $white;
+        color: $black;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .report-title,
+    .report-date,
+    .report-btn {
+        display: inline-block;
+        width: calc((100% - 40px) / 3);
+        text-align: center;
+    }
+
+    .report-title {
+        text-align: left;
+    }
+
+
+    .report-btn {
+        text-align: right;
+
+        svg {
+            width: 18px;
+            fill: $mid-grey;
+        }
+    }
+
+    .report-download,
+    .report-delete {
+        cursor: pointer;
+
+        &:hover {
+            svg {
+                fill: $grey;
+            }
+        }
+    }
+
+    .report-download {
+        margin-right: 15px;
+    }
+}

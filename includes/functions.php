@@ -29,6 +29,27 @@
 
 
     /*
+     * excerpt($text : string)
+     * Called in handle_products_list.php
+     * Return xx characters of the string
+     */
+    function excerpt($text) {
+
+        $text = trim($text);
+        $text_length = strlen($text);
+
+        if ($text_length >= 110) {
+
+            $text = substr($text, 0, 110) . '...';
+
+            return $text;
+        }
+
+        return $text;
+    }
+
+
+    /*
      * image_upload($image : object)
      * Called in handle_product_add.php
      * Upload image in URL/uploads
@@ -68,6 +89,67 @@
 
         else {
             echo "Error : Couldn't delete the image";
+            die;
+        }
+    }
+
+
+    /*
+     * report_upload($query : object)
+     * Called in handle_reports_add.php
+     * Upload report in URL/uploads
+     */
+    function report_upload($items) {
+
+        $name           = round(microtime(true)) . '.csv';
+        $directory      = __DIR__ . '/../uploads/'. $name;
+        $delimiter      = ',';
+        $file           = fopen($directory, 'w+');
+
+        $columns_titles = [
+            'id',
+            'title',
+            'description',
+            'price',
+            'quantity',
+            'file',
+            'category'
+        ];
+
+        foreach ($items as $key => $item) {
+            $items[$key] = (array)$items[$key];
+        }
+
+        fprintf($file, chr(0xEF).chr(0xBB).chr(0xBF));
+        fputcsv($file, $columns_titles, $delimiter);
+
+        foreach($items as $item){
+	       fputcsv($file, $item, $delimiter);
+        }
+
+        fclose($file);
+
+        return $name;
+    }
+
+
+    /*
+     * report_delete($query : object)
+     * Called in handle_reports_add.php
+     * Upload report in URL/uploads
+     */
+    function report_delete($file) {
+
+        $directory      = __DIR__ . '/../uploads/';
+        $filename       = $file;
+        $file           = $directory . $filename;
+
+        if ($file = unlink($file)) {
+            return $file;
+        }
+
+        else {
+            echo "Error : Couldn't delete the report";
             die;
         }
     }
