@@ -7,6 +7,9 @@
 
         <title> <?= $title_page ?> </title>
 
+        <!-- $font import -->
+        <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,600" rel="stylesheet">
+
         <!-- $css import -->
         <link href="<?= URL ?>assets/css/app.min.css" rel="stylesheet" type="text/css" />
 
