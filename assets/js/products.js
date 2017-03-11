@@ -85,6 +85,28 @@ function Controls (element) {
         }
     }
 
+    /*
+     * excerpt()
+     * Called in ajax render
+     * Return xx characters of the string
+     */
+    this.excerpt = function(text) {
+
+        text = text.trim();
+        text_length = text.length;
+
+        if (text_length >= 110) {
+
+            text = text.substring(0, 110);
+
+            return text;
+        }
+
+        else {
+            return text;
+        }
+    }
+
 
     /*
      * search(value : string, order : string)
@@ -116,6 +138,7 @@ function Controls (element) {
 
         var url  = JSON.parse(responseText).url
             item = JSON.parse(responseText).result;
+            self = this;
 
         // empty grid and items counter
         this.$el.grid.innerHTML = '';
@@ -134,7 +157,7 @@ function Controls (element) {
                         '</div>' +
                     '</div>' +
                     '<h2 class="item-title">' + item[i].title + '</h2>' +
-                    '<p class="item-description">' + item[i].description + '</p>' +
+                    '<p class="item-description">' + self.excerpt(item[i].description) + ' ...</p>' +
 
                     '<p class="item-category">' +
                         '<span class="text">Category</span>' +
