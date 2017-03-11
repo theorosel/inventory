@@ -8,11 +8,17 @@
     background-color: $white;
     box-shadow: $shadow-1;
     z-index: $zindex-4;
+    padding-left: 60px;
+    padding-right: 60px;
+    color: $black;
+
+    nav {
+        display: inline-block;
+    }
 }
 
 .primary-nav {
     height: 100%;
-    margin-left: 60px;
 }
 
 .primary-nav .links {
@@ -22,10 +28,13 @@
     margin-right: 40px;
     font-size: 1.125em;
     font-weight: 400;
-    color: $black;
 
     &:last-child {
         margin-right: 0;
+    }
+
+    &:hover {
+        color: $green;
     }
 }
 
@@ -47,6 +56,35 @@
     }
 }
 
-.primary-nav .link {
 
+.user-nav {
+    float: right;
+
+    strong {
+        font-weight: 600;
+    }
+}
+
+.user-nav .links {
+    position: relative;
+    line-height: 80px;
+    display: inline-block;
+    margin-right: 30px;
+
+    &:last-child {
+        margin-right: 0px;
+    }
+}
+
+.logout-link {
+    font-size: 0.9em;
+    color: $green;
+    padding: 8px 13px 8px 13px;
+    border: 0.5px solid $green;
+    border-radius: 4px;
+
+    &:hover {
+        background-color: $green;
+        color: $white;
+    }
 }

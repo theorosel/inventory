@@ -20,7 +20,7 @@
         <header class="header">
             <nav>
                 <ul class="primary-nav">
-                    
+
                     <?php if ($page == 'products'): ?>
                         <li class="links active"><a href="<?= URL ?>" class="link">Products</a></li>
                         <li class="links"><a href="<?= URL ?>categories" class="link">Categories</a></li>
@@ -38,4 +38,9 @@
                     <?php endif; ?>
                 </ul>
             </nav>
+
+            <ul class="user-nav">
+                <li class="links "><p>Welcome <strong><?= $_SESSION['user'] ?></strong> !</p></li>
+                <li class="links"><a href="<?= URL ?>logout" class="logout-link">Log out</a></li>
+            </ul>
         </header>
