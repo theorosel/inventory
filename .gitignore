@@ -6,8 +6,3 @@ node_modules
 
 # Dist folder
 dist
-
-# Upload folder
-uploads/*.png
-uploads/*.jpg
-uploads/*.jpeg
