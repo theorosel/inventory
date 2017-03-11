@@ -85,6 +85,7 @@ function Controls (element) {
         }
     }
 
+
     /*
      * excerpt()
      * Called in ajax render
